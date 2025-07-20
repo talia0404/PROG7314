@@ -1,3 +1,5 @@
+# Explain how to code a Hypertext Transfer Protocol (HTTP) connection from scratch. 
+
 An **HTTP connection** is the fundamental mechanism by which a client (your app) and a server exchange data over the web. At its core:
 
 * **Protocol layer**: HTTP (Hypertext Transfer Protocol) sits at the application layer, riding over TCP/IP.
@@ -80,4 +82,52 @@ Whether you’re writing a **JVM** application or an **Android** app, HTTP lets 
   ```
 
 ---
+
+## **To talk directly to a web server from your Android app, you’re going to:**
+
+1. **Build the URL** you need
+2. **Open an HTTP connection** on that URL
+3. **Send your request** (usually a GET for read‑only data)
+4. **Read the response**
+5. **Close everything** when you’re done
+
+Below is a step‑by‑step outline, followed by how this maps onto calling a RESTful API.
+
+---
+
+## 1. Coding an HTTP connection “from scratch”
+
+```kotlin
+// 1. Construct the URL
+val url = URL("https://example.com/data?param=value")
+
+// 2. Open and configure the connection
+val connection = (url.openConnection() as HttpURLConnection).apply {
+    requestMethod = "GET"
+    connectTimeout = 10_000    // 10 seconds
+    readTimeout    = 10_000
+}
+
+// 3. Send the request & check the response code
+if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+    // 4. Read the response stream
+    val reader = BufferedReader(InputStreamReader(connection.inputStream))
+    val responseText = reader.use { it.readText() }
+    // …do something with responseText…
+} else {
+    // handle non‑200 responses
+}
+
+// 5. Clean up
+connection.disconnect()
+```
+
+* **`URL.openConnection()`** returns a `URLConnection`; casting to `HttpURLConnection` gives you HTTP‑specific methods like `setRequestMethod("GET")`.
+* Always set timeouts so your app can recover if the server is slow or unreachable.
+* Wrap the `InputStream` in a `BufferedReader` (or use Kotlin’s `readText()`) to pull back the full response.
+* **Don’t block the main/UI thread**—run this code in a background thread or coroutine.
+
+---
+
+
 
