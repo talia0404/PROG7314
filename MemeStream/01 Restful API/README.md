@@ -196,5 +196,4 @@ Your Android app can now use:
 
 ---
 
-Would you like help connecting this to your Android app with Retrofit?
 
