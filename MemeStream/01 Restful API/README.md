@@ -57,7 +57,17 @@ PORT=5000
 MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/memestream?retryWrites=true&w=majority
 ```
 
-> Replace `<username>` and `<password>` with your MongoDB Atlas credentials. You can get this connection string from [https://cloud.mongodb.com](https://cloud.mongodb.com)
+> Replace `<username>` and `<password>` with the **MongoDB database user** that you created **inside your cluster**, not your main Atlas login.
+
+> 1. **Log in** to [https://cloud.mongodb.com](https://cloud.mongodb.com)
+> 2. Go to your **Project** > **Clusters**
+> 3. Click on your cluster → **Database Access** (left-hand menu)
+> 4. Under **Database Users**, you'll see existing users or can **Create New User**
+
+>   * **Username**: e.g., `memestream-user`
+>   * **Password**: Set a secure password
+>   * **Database Privileges**: Allow **Read and Write to any database**
+> 5. Save the user
 
 ---
 
