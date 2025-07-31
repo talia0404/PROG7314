@@ -74,17 +74,32 @@ MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/memestream?re
 ### 🧠 5. **Define Meme model (`models/Meme.js`)**
 
 ```js
+// Import the mongoose library, which helps interact with MongoDB
 const mongoose = require('mongoose');
 
+// Define the structure (schema) for a Meme document in the MongoDB collection
 const MemeSchema = new mongoose.Schema({
+  // The unique ID of the user who created the meme
   userId: { type: String, required: true },
+
+  // The URL of the meme image (from GIPHY or uploaded)
   imageUrl: { type: String, required: true },
+
+  // Optional caption text added to the meme
   caption: { type: String },
+
+  // Latitude where the meme was created (for geotagging)
   lat: { type: Number },
+
+  // Longitude where the meme was created (for geotagging)
   lng: { type: Number },
+
+  // Timestamp of when the meme was created; defaults to current time
   timestamp: { type: Date, default: Date.now }
 });
 
+// Export the Meme model so it can be used in other parts of the project
+// This will create a "memes" collection in MongoDB
 module.exports = mongoose.model('Meme', MemeSchema);
 ```
 
@@ -93,34 +108,57 @@ module.exports = mongoose.model('Meme', MemeSchema);
 ### 📡 6. **Create routes (`routes/memes.js`)**
 
 ```js
+// Import the Express framework
 const express = require('express');
+
+// Create a new router instance
 const router = express.Router();
+
+// Import the Meme model we defined in Meme.js
 const Meme = require('../models/Meme');
 
-// GET all memes
+
+// GET /memes
+// This endpoint fetches all memes from the database.
+// If a `userId` is provided in the query string, it filters by that user.
 router.get('/', async (req, res) => {
   try {
     const memes = req.query.userId
-      ? await Meme.find({ userId: req.query.userId })
-      : await Meme.find();
+      ? await Meme.find({ userId: req.query.userId }) // Get memes by user
+      : await Meme.find();                            // Get all memes
+
+    // Return the memes as JSON
     res.json(memes);
   } catch (err) {
+    // Return error response if something goes wrong
     res.status(500).json({ error: err.message });
   }
 });
 
-// POST new meme
+
+// POST /memes
+// This endpoint allows a client (like your Android app) to upload a new meme.
+// It expects a JSON body with userId, imageUrl, caption, lat, lng, timestamp.
 router.post('/', async (req, res) => {
   try {
+    // Create a new Meme document using the request body
     const meme = new Meme(req.body);
+
+    // Save the meme to the database
     const saved = await meme.save();
+
+    // Return the newly created meme with status 201 (Created)
     res.status(201).json(saved);
   } catch (err) {
+    // Return validation or input errors
     res.status(400).json({ error: err.message });
   }
 });
 
+
+// Export this router so it can be used in server.js
 module.exports = router;
+
 ```
 
 ---
@@ -128,29 +166,53 @@ module.exports = router;
 ### 🌐 7. **Create main server (`server.js`)**
 
 ```js
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
+// Import required modules
+const express = require('express');           // Web framework for building the API
+const mongoose = require('mongoose');         // ODM library for MongoDB
+const cors = require('cors');                 // Allows cross-origin requests (important for frontend-backend communication)
+require('dotenv').config();                   // Loads environment variables from .env file
 
+// Initialize the Express app
 const app = express();
+
+// Define the port from .env or default to 5000
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+// MIDDLEWARE SETUP
+
+// Enable Cross-Origin Resource Sharing (e.g. allow Android app or browser to call the API)
 app.use(cors());
+
+// Enable parsing of JSON bodies in requests
 app.use(express.json());
 
-// Routes
+// ROUTE HANDLING
+
+// All requests to /memes will be handled by the memes router
 app.use('/memes', require('./routes/memes'));
 
-// Connect to MongoDB
+
+// CONNECT TO MONGODB
+
+// Connect to the MongoDB database using the connection string from .env
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then(() => {
-  console.log('✅ Connected to MongoDB');
-  app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
-}).catch(err => console.error('❌ MongoDB error:', err));
+})
+.then(() => {
+  // Log success message when connected
+  console.log(' Connected to MongoDB');
+
+  // Start the server only after a successful DB connection
+  app.listen(PORT, () =>
+    console.log(` Server running on http://localhost:${PORT}`)
+  );
+})
+.catch(err => {
+  // Log an error message if DB connection fails
+  console.error(' MongoDB error:', err);
+});
+
 ```
 
 ---
