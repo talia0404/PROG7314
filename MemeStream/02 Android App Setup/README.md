@@ -1,4 +1,4 @@
-# ✅ **Step 2: Android App Setup **
+# ✅ **Step 2: Android App Setup**
 
 ---
 
