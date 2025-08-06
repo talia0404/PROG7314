@@ -158,7 +158,6 @@ router.post('/', async (req, res) => {
 
 // Export this router so it can be used in server.js
 module.exports = router;
-
 ```
 
 ---
@@ -336,8 +335,11 @@ Filter memes posted by a specific user (e.g. `new_user_2`)
 1. Go to [https://render.com](https://render.com)
 2. Connect your GitHub repo
 3. Create new web service
-4. Choose `01-RestfulAPI` folder
-5. Set environment variables for `PORT` and `MONGO_URI`
+4. Choose root folder as stated in github
+5. build command - npm install
+6. start command - node server.js
+7. Set environment variables for `PORT` and `MONGO_URI`
+8. Deploy
 
 #### 🌍 Option 2: **Railway**
 
