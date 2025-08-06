@@ -54,7 +54,7 @@ Create the following files and folders:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/memestream?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv:...
 ```
 
 > Replace `<username>` and `<password>` with the **MongoDB database user** that you created **inside your cluster**, not your main Atlas login.
