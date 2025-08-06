@@ -35,6 +35,7 @@ Open `AndroidManifest.xml` inside `src/main/` and add these lines **above** the 
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
 
