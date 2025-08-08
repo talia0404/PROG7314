@@ -82,9 +82,6 @@ dependencies {
     implementation("com.google.android.gms:play-services-maps:18.1.0")
     implementation("com.google.android.gms:play-services-location:21.0.1")
 
-    // Twitter SDK (or use ACTION_SEND intent instead)
-    implementation("com.twitter.sdk.android:twitter:3.3.0")
-
     // Biometric authentication
     implementation("androidx.biometric:biometric:1.1.0")
 
