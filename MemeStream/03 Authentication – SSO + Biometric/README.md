@@ -40,19 +40,19 @@ dependencies {
 }
 ```
 
-At the bottom of the file, **apply the Firebase plugin** if you haven’t already:
+In your build gradle project level, **apply the Firebase plugin** if you haven’t already:
 
 ```kotlin
 plugins {
-    id("com.google.gms.google-services")
+        id("com.google.gms.google-services") version "4.4.2" apply false
 }
 ```
 
 In your **project-level** `build.gradle.kts` file:
 
 ```kotlin
-dependencies {
-    classpath("com.google.gms:google-services:4.4.1")
+plugins {
+    id("com.google.gms.google-services")
 }
 ```
 
