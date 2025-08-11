@@ -117,7 +117,7 @@ This screen will:
 * Display a “Sign in with Google” button
 * Handle Firebase Auth
 
-#### b. **In LoginActivity.kt** (guide, not code)
+#### b. **In LoginActivity.kt** 
 
 1. **Initialize FirebaseAuth**
 
