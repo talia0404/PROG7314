@@ -157,7 +157,22 @@ https://firebase.google.com/docs/auth/android/google-signin
 
 ### ✅ Part B: Biometric Authentication
 
+**Resources:**
+
+Implement Biometric Authentication in Android Apps:   
+https://pranaypatel.medium.com/implement-biometric-authentication-in-android-apps-f091fbbb9988
+
+BiometricPrompt protects local access to that already-signed-in session on this device.
+
+Think of it like: “You’re signed in as XYZ via Google—now prove it’s you before we show data."
+
 ### 🧩 1. Where to Place Biometric Flow
+
+After first successful Google sign-in: ask the user to enable biometrics.
+
+On subsequent app launches (if FirebaseAuth.getCurrentUser() ≠ null and user enabled biometrics): gate entry with BiometricPrompt.
+
+If biometric fails or hardware/enrollment is missing, fall back to normal sign-in.
 
 You can place biometric login:
 
