@@ -157,14 +157,14 @@ https://firebase.google.com/docs/auth/android/google-signin
 
 ### 🧩 Part B: Biometric Authentication
 
+---
 **Resources:**
 
 Implement Biometric Authentication in Android Apps:   
 https://pranaypatel.medium.com/implement-biometric-authentication-in-android-apps-f091fbbb9988
+---
 
-BiometricPrompt protects local access to that already-signed-in session on this device.
-
-Think of it like: “You’re signed in as XYZ via Google—now prove it’s you before we show data."
+BiometricPrompt protects local access to that already-signed-in session on this device. Think of it like: “You’re signed in as XYZ via Google—now prove it’s you before we show data."
 
 ### 🧩 1. Where to Place Biometric Flow
 
