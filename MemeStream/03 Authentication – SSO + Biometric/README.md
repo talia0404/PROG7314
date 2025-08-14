@@ -155,7 +155,7 @@ https://firebase.google.com/docs/auth/android/google-signin
 
 ---
 
-### ✅ Part B: Biometric Authentication
+### 🧩 Part B: Biometric Authentication
 
 **Resources:**
 
