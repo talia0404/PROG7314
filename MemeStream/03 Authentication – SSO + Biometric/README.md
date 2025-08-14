@@ -147,6 +147,12 @@ This screen will:
 
 7. **On success, navigate to the main app (and trigger biometric)**
 
+
+#### **Resources:**
+
+Authenticate with Google on Android:   
+https://firebase.google.com/docs/auth/android/google-signin
+
 ---
 
 ### ✅ Part B: Biometric Authentication
