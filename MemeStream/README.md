@@ -104,7 +104,7 @@ This hands‑on project ties together all the module’s Learning Outcomes in on
 ### 6. 📲 Social Sharing
 
 * **Twitter Kit**: configure in `Application` class
-* In **ProfileFragment**, on “Share” tap:
+* In **ProfileFragment**, on “Share” tap
 
 ---
 
