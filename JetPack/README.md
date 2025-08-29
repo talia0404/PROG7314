@@ -43,4 +43,12 @@ fun Greeting(name: String) { Text("Hello, $name!") }
 
 https://developer.android.com/compose
 
+---
+
+## 29 August 2025 - JetPack Tutorial
+
+1. Do the compose essentials tutorial:
+
 https://developer.android.com/courses/jetpack-compose/course
+
+2. Stop after step 4: Writing your first compose app.
