@@ -42,4 +42,5 @@ fun Greeting(name: String) { Text("Hello, $name!") }
 * Teaching/learning or prototyping → Compose speeds iteration and previewing.
 
 https://developer.android.com/compose
+
 https://developer.android.com/courses/jetpack-compose/course
