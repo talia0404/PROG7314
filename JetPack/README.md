@@ -51,7 +51,7 @@ https://developer.android.com/compose
 
 https://developer.android.com/courses/jetpack-compose/course
 
-### Step 2 — “Thinking in Compose” 🧠
+### Step 2 - “Thinking in Compose” 🧠
 
 * **Mindset shift (imperative → declarative):** you don’t “build and mutate views”; you **describe** what the UI should look like for the current state, and Compose re-draws it when state changes (recomposition). 
 * **Composable functions as UI description:** small, side-effect-free functions that take data and **emit UI** by calling other composables; prefer immutability and predictable outputs.
@@ -59,7 +59,7 @@ https://developer.android.com/courses/jetpack-compose/course
 * **State hoisting:** keep the single source of truth above the composable that renders it; pass state + callbacks down, not mutable state around.
 * **Why this matters:** simpler reasoning about UI, fewer bugs from stale/mutated view state, and easier testing.
 
-# Step 3 — “Composable functions” 🧩
+### Step 3 - “Composable functions” 🧩
 
 * **Building blocks of Compose:** a composable is a Kotlin function annotated to participate in composition; you compose UIs by **combining small reusable composables**.
 * **Parameters & reusability:** pass in data and callbacks; avoid hidden globals; keep functions focused and stateless where possible (separate stateful/stateless versions).
