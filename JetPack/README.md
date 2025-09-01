@@ -45,7 +45,7 @@ https://developer.android.com/compose
 
 ---
 
-## 29 August 2025 - JetPack Tutorial
+## 29 August 2025 (Group 2)/ 01 September 2025(Group 1) - JetPack Tutorial
 
 **1. Do the compose essentials tutorial:**
 
