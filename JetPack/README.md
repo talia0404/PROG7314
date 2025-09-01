@@ -141,9 +141,13 @@ https://developer.android.com/courses/jetpack-compose/course
 🚀  Notes 
 
 ✅ Use **Material 3** (`androidx.compose.material3.*`).
+
 ✅ Prefer `animateContentSize()` for expanding cards.
+
 ✅ Keep dependencies updated with the latest Compose BOM.
+
 ✅ Test in both **light & dark modes**.
+
 ✅ Use **string resources** instead of hardcoded text for accessibility.
 
 ---
