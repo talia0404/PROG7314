@@ -104,7 +104,7 @@ https://developer.android.com/courses/jetpack-compose/course
 * **Theming & Styling**
 
   * **XML/View:** Styles/themes via XML; mix of XML + code.
-  * **Compose:** **Material 3** theming in Kotlin (color/typography/shape) applied consistently.
+  * **Compose:** **Material 3** theming in Kotlin (colour/typography/shape) applied consistently.
 
 * **Interoperability**
 
@@ -128,5 +128,130 @@ https://developer.android.com/courses/jetpack-compose/course
 
 
 **2. Stop after step 4: Writing your first compose app.**
+
+### Step 3: ✨📱 Jetpack Compose Basics – Tutorial Summary
+
+---
+
+📝 1. **Before You Begin**
+
+* Jetpack Compose = modern, declarative UI toolkit using Kotlin and composable functions (`@Composable`) to build UI.
+* Tutorial uses **Material 3** → students should stick to Material 3 for modern projects.
+
+🚀  Notes 
+
+✅ Use **Material 3** (`androidx.compose.material3.*`).
+✅ Prefer `animateContentSize()` for expanding cards.
+✅ Keep dependencies updated with the latest Compose BOM.
+✅ Test in both **light & dark modes**.
+✅ Use **string resources** instead of hardcoded text for accessibility.
+
+---
+
+🆕 2. **Start a New Compose Project**
+
+* In Android Studio → choose **Empty Activity**, set `minSdk ≥ 21`.
+* Project already includes Compose setup → open `MainActivity.kt`.
+
+---
+
+🎨 3. **Explore Composable Functions**
+
+* Build UI with `@Composable` functions.
+* Preview with `@Preview` annotation.
+
+---
+
+🎨🖌️ 4. **Tweak the UI**
+
+* Use `Surface` for backgrounds + theming.
+* Add spacing & styling with `Modifier` (e.g., `.padding()`).
+
+---
+
+🔁 5. **Reusable Composables**
+
+* Create `MyApp` composable to reduce duplication and keep code clean.
+
+---
+
+📐 6. **Layouts: Column, Row, Box**
+
+* Arrange elements vertically with `Column`, horizontally with `Row`, and overlay with `Box`.
+
+---
+
+## 🔘 7. **Add a Button**
+
+* Add an `ElevatedButton`.
+* Use `.weight(1f)` in a `Row` for spacing between items.
+
+---
+
+🔄 8. **State Management**
+
+* Manage UI state with `remember { mutableStateOf(...) }`.
+* Use `by` delegation for cleaner syntax (`var expanded by remember { ... }`).
+
+---
+
+🏗️ 9. **Hoist State**
+
+* Move state up to a parent composable.
+* Pass down callbacks like `onContinueClicked`.
+
+---
+
+📜 10. **Use LazyColumn for Performance**
+
+* For long lists → use `LazyColumn { items(...) { ... } }`.
+* Much more efficient than a normal `Column`.
+
+---
+
+💾 11. **Persisting State**
+
+* Use `rememberSaveable` to keep state (like expanded/collapsed) after rotation.
+
+---
+
+🎬 12. **Add Animation**
+
+* Animate padding or size changes with `animateDpAsState` or `animateContentSize()`.
+* Add smooth effects with `spring()`.
+
+---
+
+🎨🌙 13. **Styling & Theming**
+
+* Explore `Theme.kt`: support dark/light modes + dynamic colour.
+* Apply typography styles (e.g. `headlineMedium`).
+* Use `@Preview(..., uiMode = UI_MODE_NIGHT_YES)` to test dark mode.
+
+---
+
+🎉 14. **Finishing Touches**
+
+* Replace text buttons with `IconButton + Icon`.
+* Wrap UI in a `Card` for polished Material 3 look.
+* Always include `contentDescription` for accessibility.
+
+
+---
+
+# 📊 Quick At-A-Glance Version for You
+
+| Step | What to Do                                           | Pro Tip                             |
+| ---- | ---------------------------------------------------- | ----------------------------------- |
+| 1️⃣  | Set up Compose project with Material 3               | Use latest Android Studio           |
+| 2️⃣  | Build UI with `@Composable`, preview with `@Preview` | Cleaner Kotlin with `by` delegation |
+| 3️⃣  | Style with `Surface`, `Modifier`, and theming        | Keep UI reusable                    |
+| 4️⃣  | Layout with `Column`, `Row`, `.weight()`             | Organise properly                   |
+| 5️⃣  | Manage state with `rememberSaveable`                 | Hoist state + callbacks             |
+| 6️⃣  | Use `LazyColumn` for lists                           | More efficient than `Column`        |
+| 7️⃣  | Animate with `animateContentSize()`                  | Simpler & smoother                  |
+| 8️⃣  | Polish with `Card`, icons, dark mode                 | Test accessibility too              |
+
+---
 
 
