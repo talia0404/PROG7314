@@ -2,6 +2,8 @@
 
 ---
 
+Resources: https://developer.android.com/develop/ui/views/notifications/build-notification 
+
 ### 🛠 Step 1: Create the Project
 
 * Pick a minimum SDK (Android 7.0 / API 24 is safe).
