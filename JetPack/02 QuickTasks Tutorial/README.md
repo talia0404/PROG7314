@@ -1,7 +1,5 @@
 # 🧭 What you’re building
 
-## https://github.com/talia0404/02-QuickTasks.git
-
 A single-screen app called **QuickTasks** that:
 
 * Shows a **Top App Bar** titled “QuickTasks” 🧭
@@ -173,3 +171,5 @@ Android Developers - "Get started with Jetpack Compose", https://developer.andro
 
  "App bars | Jetpack Compose": https://developer.android.com/develop/ui/compose/components/app-bars
  "Top app bar – Material Design 3": https://m3.material.io/components/app-bars/guidelines  
+
+ repo link:  https://github.com/talia0404/02-QuickTasks.git
