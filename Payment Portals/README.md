@@ -2,12 +2,12 @@
 
 | Gateway                     | Android SDK / Support                                                      | What is free / what you pay                                                                                        |
 | --------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **Google Pay**              | Yes — there’s the Google Pay API for Android. ([Google for Developers][1]) | Free to integrate. No extra fee from Google for merchants (just the usual card/processor fees). ([ScaleupAlly][2]) |
-| **Stripe**                  | Yes — Stripe’s Android SDK is solid. ([GitHub][3])                         | No setup / monthly fee; you pay per-transaction. “Free integration” in terms of SDK cost. ([GeeksforGeeks][4])     |
-| **PayPal**                  | Yes — PayPal Mobile Android SDK. ([PayPal Developer][5])                   | Same deal: free SDK / dev account; transaction fees apply. ([PayPal Developer][5])                                 |
-| **Square**                  | Yes — has Mobile Payments / SDKs. ([Square][6])                            | SDK is free; but only available fully to merchants in certain countries. Transaction fees apply. ([Square][6])     |
-| **Amazon Payment Services** | Yes — they offer a mobile SDK for Android. ([Amazon Payment Services][7])  | Free to download & integrate; transaction charges apply. ([Amazon Payment Services][7])                            |
-| **Cashfree**                | Yes — there is an Android SDK. ([GitHub][8])                               | Same model: no SDK cost, pay per transaction. ([agilie.com][9])                                                    |
+| **Google Pay**              | Yes, there’s the Google Pay API for Android. ([Google for Developers][1]) | Free to integrate. No extra fee from Google for merchants (just the usual card/processor fees). ([ScaleupAlly][2]) |
+| **Stripe**                  | Yes,  Stripe’s Android SDK is solid. ([GitHub][3])                         | No setup / monthly fee; you pay per-transaction. “Free integration” in terms of SDK cost. ([GeeksforGeeks][4])     |
+| **PayPal**                  | Yes,  PayPal Mobile Android SDK. ([PayPal Developer][5])                   | Same deal: free SDK / dev account; transaction fees apply. ([PayPal Developer][5])                                 |
+| **Square**                  | Yes,  has Mobile Payments / SDKs. ([Square][6])                            | SDK is free; but only available fully to merchants in certain countries. Transaction fees apply. ([Square][6])     |
+| **Amazon Payment Services** | Yes,  they offer a mobile SDK for Android. ([Amazon Payment Services][7])  | Free to download & integrate; transaction charges apply. ([Amazon Payment Services][7])                            |
+| **Cashfree**                | Yes,  there is an Android SDK. ([GitHub][8])                               | Same model: no SDK cost, pay per transaction. ([agilie.com][9])                                                    |
 
 ---
 
@@ -15,8 +15,8 @@
 
 * Even if the SDK / integration is free, **transaction fees** (percentage + maybe fixed amount) are almost always there.
 * Location matters. Some gateways are only available in certain countries. If you’re in South Africa, check whether the gateway supports South African merchants / ZAR, etc.
-* Compliance (like PCI-DSS) may require you to do some extra work if you’re handling card data directly vs using their hosted UI / tokenization.
-* Currency conversion fees, cross-border fees etc could apply.
+* Compliance (like PCI-DSS) may require you to do some extra work if you’re handling card data directly vs using their hosted UI / tokenisation.
+* Currency conversion fees, cross-border fees, etc could apply.
 
 ---
 
