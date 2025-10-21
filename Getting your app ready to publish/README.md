@@ -173,6 +173,62 @@ Go to:
 * Add **release notes** (changes since last version).
 * Click **Save**, then **Review release**, then **Start rollout to production**.
 
+
+
+>**NOTE!**
+>
+> A **SHA-1** or **SHA-256 fingerprint** is a cryptographic hash of the **keystore certificate** you use to sign your app. 
+**SHA fingerprints** -> they’re basically **digital IDs** that say “this app really came from you.”
+>
+>Think of your **keystore** like your app’s passport -> it proves who you are when your app tries to talk to secure services (like Firebase, Google Maps, or Sign-In with Google).
+>
+>Every key has a unique fingerprint:
+>
+>* **SHA-1** was the old standard (still used by Firebase Auth, Google Sign-In
+>* **SHA-256** is the newer, stronger one (used by Play App Signing and newer APIs)
+>
+> 📦 When You Publish
+>
+>When you **build your release app** (signed `.aab`), Android Studio uses a **keystore** file (`.jks`) to sign it.
+>That keystore’s fingerprint gets attached to your app identity forever.
+>
+>When you **upload to the Play Store**:
+>
+>1. Google re-signs your app using **Google Play App Signing**.
+>2. This generates **new SHA fingerprints** (one for upload key, one for app signing key).
+>3. You’ll see both in the Play Console → **Setup > App Integrity**.
+>
+>If you’re using Firebase, Maps API, or anything that checks signatures, you’ll need to:
+>
+>* **Add both fingerprints** (upload + app signing) to the Firebase console or Google Cloud API console.
+>
+>---
+>
+>### 🔐 Example Workflow
+>
+>Let’s say you build locally and use Firebase:
+>
+>1. **Generate fingerprints** (in terminal):
+>
+>  ```bash
+>   keytool -list -v -keystore my-release-key.jks -alias myalias -storepass password -keypass password
+>   ```
+>
+>   -> copy SHA-1 and SHA-256.
+>
+>2. Add them to:
+>
+>   * [Firebase Console -> Project Settings -> Your Apps -> Add Fingerprints]
+>   * or Google Cloud → Credentials → OAuth 2.0 client IDs.
+>
+>3. Later, once you upload to Play Store:
+>
+>   * Go to **Play Console -> App Integrity**
+>   * Copy Google’s SHA-1 and SHA-256
+>   * Add those too in Firebase.
+>
+>That ensures your live app and debug app both authenticate correctly.
+
 ---
 
 ## ✅ 10. Wait for Review
