@@ -204,7 +204,7 @@ Go to:
 >
 >---
 >
->### 🔐 Example Workflow
+> 🔐 Example Workflow
 >
 >Let’s say you build locally and use Firebase:
 >
